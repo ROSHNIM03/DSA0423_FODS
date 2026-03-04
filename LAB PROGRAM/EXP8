@@ -1,0 +1,9 @@
+import numpy as np
+
+# Inbuilt product prices
+prices = np.array([500, 750, 1200, 300, 950])
+
+average_price = np.mean(prices)
+
+print("Product Prices:", prices)
+print("Average Product Price:", average_price)
