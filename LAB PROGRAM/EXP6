@@ -1,0 +1,14 @@
+import numpy as np
+
+# Inbuilt data
+time = np.array([0, 1, 2, 3, 4])
+position = np.array([0, 5, 15, 20, 10])
+
+displacement = position[-1] - position[0]
+total_time = time[-1] - time[0]
+
+average_velocity = displacement / total_time
+
+print("Time:", time)
+print("Position:", position)
+print("Average Velocity:", average_velocity)
