@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+control = np.array([5,6,7,5,6])
+treatment = np.array([8,9,7,10,9])
+
+control_mean = np.mean(control)
+treatment_mean = np.mean(treatment)
+
+print("Control Mean:", control_mean)
+print("Treatment Mean:", treatment_mean)
+
+plt.boxplot([control, treatment])
+plt.xticks([1,2], ["Control","Treatment"])
+plt.title("Treatment vs Control")
+plt.show()
