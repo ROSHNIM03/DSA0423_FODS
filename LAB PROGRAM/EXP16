@@ -1,0 +1,23 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+
+data = pd.DataFrame({
+'age':[25,40,35,50],
+'bp':[120,140,130,150],
+'chol':[200,240,220,260],
+'result':['Good','Bad','Good','Bad']
+})
+
+X = data[['age','bp','chol']]
+y = data['result']
+
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.3)
+
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X_train,y_train)
+
+pred = model.predict(X_test)
+
+print(classification_report(y_test,pred))
