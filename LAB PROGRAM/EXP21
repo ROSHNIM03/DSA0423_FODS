@@ -1,0 +1,18 @@
+from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
+
+data = pd.DataFrame({
+'weight':[150,170,120],
+'color':[1,2,1],
+'texture':[1,1,2],
+'type':['apple','orange','banana']
+})
+
+X = data[['weight','color','texture']]
+y = data['type']
+
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X,y)
+
+prediction = model.predict([[160,1,1]])
+print("Predicted Fruit:",prediction[0])
