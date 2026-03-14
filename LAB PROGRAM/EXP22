@@ -1,0 +1,19 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+data = pd.DataFrame({
+'age':[25,40,30],
+'income':[30000,60000,45000],
+'browsing_duration':[5,10,7],
+'device':[1,2,1],
+'purchase':[0,1,1]
+})
+
+X = data[['age','income','browsing_duration','device']]
+y = data['purchase']
+
+model = DecisionTreeClassifier()
+model.fit(X,y)
+
+pred = model.predict([[28,35000,6,1]])
+print("Purchase Prediction:",pred[0])
