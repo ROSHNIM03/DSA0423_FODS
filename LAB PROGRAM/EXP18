@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = pd.DataFrame({
+'City':['A','A','B','B'],
+'Temp':[30,35,25,28]
+})
+
+mean = data.groupby('City')['Temp'].mean()
+std = data.groupby('City')['Temp'].std()
+range_city = data.groupby('City')['Temp'].max()-data.groupby('City')['Temp'].min()
+
+print(mean)
+print(std)
+print(range_city)
