@@ -1,0 +1,19 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+
+data = pd.DataFrame({
+'income':[30000,60000,50000],
+'credit_score':[650,750,700],
+'debt_ratio':[0.4,0.2,0.3],
+'employment':[2,5,4],
+'risk':[1,0,0]
+})
+
+X = data[['income','credit_score','debt_ratio','employment']]
+y = data['risk']
+
+model = DecisionTreeClassifier()
+model.fit(X,y)
+
+pred = model.predict([[45000,720,0.3,3]])
+print("Credit Risk:",pred[0])
