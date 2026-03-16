@@ -1,0 +1,10 @@
+import numpy as np
+from scipy import stats
+
+data = np.random.normal(1200,100,100)
+
+mean = np.mean(data)
+sem = stats.sem(data)
+
+ci = stats.t.interval(0.95,len(data)-1,loc=mean,scale=sem)
+print("Confidence Interval:",ci)
