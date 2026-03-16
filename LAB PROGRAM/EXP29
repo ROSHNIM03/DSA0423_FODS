@@ -1,0 +1,13 @@
+import pandas as pd
+import numpy as np
+from scipy import stats
+
+data = pd.DataFrame({'rating':[4,5,3,4,5]})
+
+mean = data['rating'].mean()
+sem = stats.sem(data['rating'])
+
+ci = stats.t.interval(0.95,len(data)-1,loc=mean,scale=sem)
+
+print("Mean Rating:",mean)
+print("Confidence Interval:",ci)
