@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandas.plotting import scatter_matrix
+
+data = pd.DataFrame({
+'speed':[100,120,130],
+'mileage':[15,12,10],
+'price':[500000,700000,900000]
+})
+
+scatter_matrix(data)
+plt.show()
